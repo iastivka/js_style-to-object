@@ -6,6 +6,10 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
+  if (typeof sourceString !== 'string') {
+    throw new TypeError('Input must be a string');
+  }
+
   return sourceString
     .split(';')
     .map((style) => style.trim())
